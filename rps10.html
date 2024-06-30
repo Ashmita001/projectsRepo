@@ -6,38 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rock-paper-scissors</title>
     <style>
-        body{
-            background-color: rgb(25,25,25);
+        body {
+            background-color: rgb(25, 25, 25);
             color: white;
-            font-family:Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            vertical-align: middle;
         }
-        .title{
+
+        .title {
             font-size: 36px;
             font-weight: bold;
         }
 
-        .move-icon{
+        .move-icon {
             height: 50px;
-            width:50px;
+            width: 50px;
         }
-        .move-button{
-            background-color:transparent ;
+
+        .move-button {
+            background-color: transparent;
             border-radius: 100px;
             /* border-width: 2px;
             border-color: white; */
-            border:2px solid white;
-            padding:50px;
-            margin:8px;
-            cursor:pointer;
+            border: 2px solid white;
+            padding: 50px;
+            margin: 8px;
+            cursor: pointer;
             /* height: 120px;
             width:120px; */
         }
 
-        .result{
-            font-size:25px ;
-            font-weight:bold;
-            margin-top:50px;
-            
+        .result {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+
+        }
+        .reset{
+            padding:10px 15px;
+            color:black;
+            border:none;
+            border-radius:4px;
+            font-size:15px ;
         }
     </style>
 </head>
@@ -56,20 +66,17 @@
     <button class="move-button" onclick=" 
         playGame('scissors');  
         "><img src="scissors2.png" class="move-icon" alt="scissors"></button>
-        <p class="js-result result">You win</p>
-        <p class="js-moves">You 
-        <img src="rock2.png" class="move-icon" alt="rock">
-        <img src="scissors2.png" class="move-icon" alt="scissors">
-        Computer
-        </p>
-    <p class="js-score"></p>
-    <button onclick="
+    <p class="js-result result">You win</p>
+    <p class="js-moves result">
+    </p>
+    <p class="js-score result"></p>
+    <button class="reset" onclick="
         score.wins=0;
         score.lose=0;
         score.ties=0;
         localStorage.removeItem('score');
         updateScore();
-        ">Reset</button>
+        ">Reset Score</button>
 
 
     <script>
@@ -127,8 +134,11 @@
             localStorage.setItem('score', JSON.stringify(score));
 
             updateScore();
-            document.querySelector('.js-result').innerHTML=result;
-            document.querySelector('.js-moves').innerHTML=`you ${PlayerMove} - ${computerMove} Computer`;
+            document.querySelector('.js-result').innerHTML = result;
+            document.querySelector('.js-moves').innerHTML = `You
+        <img src="${PlayerMove}2.png" class="move-icon" alt="rock">
+        <img src="${computerMove}2.png" class="move-icon" alt="scissors">
+        Computer`;
             //alert(`you picked ${PlayerMove} and computer picked ${computerMove} . ${result}
             //`)
 
