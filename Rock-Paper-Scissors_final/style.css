@@ -34,10 +34,11 @@ body {
     margin-top: 50px;
 
 }
-.reset{
+.reset,.Autoplay-button{
     padding:10px 15px;
     color:black;
     border:none;
     border-radius:4px;
     font-size:15px ;
+    cursor:pointer ;
 }

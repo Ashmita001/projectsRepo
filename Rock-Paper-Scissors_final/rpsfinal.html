@@ -12,19 +12,24 @@
 </head>
 
 <body>
+    <!-- Added another class to the rock ,paper and scissors and then removed onlick and added eventlistener function in the script  -->
     <p class="title">Rock Paper Scissors</p>
-    <button class="move-button" onclick="
-    playGame('rock');
+    <button class="move-button js-rock-button" 
     
-    "><img src="rock2.png" class="move-icon" alt="rock"></button>
+><img src="rock2.png" class="move-icon" alt="rock"></button>
+<!-- onclick="
+    playGame('rock'); -->
 
-    <button class="move-button" onclick="
-    playGame('paper');
-">
+
+    <button class="move-button js-paper-button" >
         <img src="paper2.png" class="move-icon" alt="paper"></button>
-    <button class="move-button" onclick=" 
+        <!-- onclick="
+    playGame('paper');
+" -->
+    <button class="move-button js-scissors-button " ><img src="scissors2.png" class="move-icon" alt="scissors"></button>
+    <!-- onclick=" 
         playGame('scissors');  
-        "><img src="scissors2.png" class="move-icon" alt="scissors"></button>
+        " -->
     <p class="js-result result">You win</p>
     <p class="js-moves result">
     </p>
@@ -36,6 +41,9 @@
         localStorage.removeItem('score');
         updateScore();
         ">Reset Score</button>
+        <button class="Autoplay-button" onclick="
+        autoPlay();
+        ">Autoplay</button>
 
 
     <script src="rps.js"></script> 
